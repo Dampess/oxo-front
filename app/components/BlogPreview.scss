@@ -26,6 +26,9 @@
     color: #6b7280;
     margin-bottom: 4rem;
     font-size: 1.05rem;
+    @media (prefers-color-scheme: dark) {
+      color: vars.$foreground-dark;
+    }
   }
 
   .posts-grid {

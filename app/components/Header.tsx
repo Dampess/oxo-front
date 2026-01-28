@@ -52,7 +52,7 @@ export default function Header() {
                 </div>
 
                 <div className="dropdown-column">
-                  <span className="dropdown-title">For Businesses</span>
+                  <span className="dropdown-title">Ressources</span>
                   <Link href="/solutions/business/usescases">Use Cases</Link>
                   <Link href="/solutions/business/compliance">
                     Compliance & Trust

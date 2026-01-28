@@ -25,6 +25,9 @@
     color: #6b7280;
     font-size: 1.05rem;
     margin-bottom: 4rem;
+    @media (prefers-color-scheme: dark) {
+      color: vars.$foreground-dark;
+    }
   }
 
   .steps {

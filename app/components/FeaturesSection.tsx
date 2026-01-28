@@ -21,7 +21,7 @@ export default function FeaturesSection() {
           </div>
 
           <div className="feature-card">
-            <div className="icon">👃</div>
+            <div className="icon"></div>
             <h4 className="feature-title">Number Validation</h4>
             <p className="feature-text">
               Detect suspicious or fraudulent numbers to prevent scams.
