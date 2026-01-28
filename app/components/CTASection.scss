@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../styles/variables.scss" as vars;
 .cta-section {
   padding: 2rem 0.5rem;
@@ -56,7 +57,7 @@
     transition: 0.3s;
 
     &:hover {
-      background-color: darken(vars.$oxo-orange, 10%);
+      background-color: color.adjust(vars.$oxo-orange, $lightness: -10%);
     }
   }
   @media (prefers-color-scheme: dark) {

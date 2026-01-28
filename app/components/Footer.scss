@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "../styles/variables.scss" as vars;
 
 .footer {
@@ -40,7 +41,7 @@
 
       &:hover {
         text-decoration: underline;
-        color: darken(vars.$oxo-blue, 10%);
+        color: color.adjust(vars.$oxo-blue, $lightness: -10%);
       }
     }
   }

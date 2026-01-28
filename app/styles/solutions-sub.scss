@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "./variables.scss" as vars;
 
 .solutions-sub {
@@ -128,7 +129,7 @@
         background: linear-gradient(
           135deg,
           vars.$oxo-blue,
-          darken(vars.$oxo-blue, 10%)
+          color.adjust(vars.$oxo-blue, $lightness: -10%)
         );
         color: white;
         box-shadow: 0 10px 25px rgba(74, 144, 226, 0.35);
@@ -138,7 +139,7 @@
         background: linear-gradient(
           135deg,
           vars.$oxo-orange,
-          darken(vars.$oxo-orange, 10%)
+          color.adjust(vars.$oxo-orange, $lightness: -10%)
         );
         color: white;
         box-shadow: 0 10px 25px rgba(255, 127, 80, 0.35);
