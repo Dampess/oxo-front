@@ -1,4 +1,5 @@
 import "./HeroSection.scss";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -12,9 +13,9 @@ export default function HeroSection() {
           audits all in one trusted platform.
         </p>
 
-        <a href="/solutions" className="hero-button">
+        <Link href="/solutions" className="hero-button">
           See Our Solutions
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import "./Footer.scss";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -14,21 +15,21 @@ export default function Footer() {
             support@oxo.com
           </a>
           {" · "}
-          <a href="/privacy" className="link">
+          <Link href="/privacy" className="link">
             Privacy Policy
-          </a>
+          </Link>
           {" · "}
-          <a href="/terms" className="link">
+          <Link href="/terms" className="link">
             Terms of Service
-          </a>
+          </Link>
           {" · "}
-          <a href="/cgu" className="link">
+          <Link href="/cgu" className="link">
             CGU
-          </a>
+          </Link>
           {" · "}
-          <a href="/cgv" className="link">
+          <Link href="/cgv" className="link">
             CGV
-          </a>
+          </Link>
         </p>
       </div>
     </footer>

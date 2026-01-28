@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import "./Header.scss";
@@ -13,7 +14,7 @@ export default function Header() {
     <header className="header">
       <div className="container">
         {/* Brand */}
-        <a href="/" className="nav-link">
+        <Link href="/" className="nav-link">
           <div className="brand">
             <Image
               src="/logo_oxo.jpg"
@@ -22,12 +23,13 @@ export default function Header() {
               height={70}
               className="logo"
             />
+
             <div>
               <div className="brand-name">Oxo</div>
               <div className="brand-tagline">See. Smell. Protect.</div>
             </div>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="nav">
@@ -39,29 +41,31 @@ export default function Header() {
               <div className="dropdown">
                 <div className="dropdown-column">
                   <span className="dropdown-title">Security Solutions</span>
-                  <a href="/solutions/business/email&phishing">
+                  <Link href="/solutions/business/email&phishing">
                     Email & Phishing Protection
-                  </a>
-                  <a href="/solutions/business/link&domain">
+                  </Link>
+                  <Link href="/solutions/business/link&domain">
                     Link & Domain Analysis
-                  </a>
-                  <a href="/solutions/business/fraud">Fraud Detection</a>
-                  <a href="/solutions/business/audits">System Audits</a>
+                  </Link>
+                  <Link href="/solutions/business/fraud">Fraud Detection</Link>
+                  <Link href="/solutions/business/audits">System Audits</Link>
                 </div>
 
                 <div className="dropdown-column">
                   <span className="dropdown-title">For Businesses</span>
-                  <a href="/solutions/business/usescases">Use Cases</a>
-                  <a href="/solutions/business/compliance">
+                  <Link href="/solutions/business/usescases">Use Cases</Link>
+                  <Link href="/solutions/business/compliance">
                     Compliance & Trust
-                  </a>
-                  <a href="/solutions/business/casesstudies">Case Studies</a>
+                  </Link>
+                  <Link href="/solutions/business/casesstudies">
+                    Case Studies
+                  </Link>
                 </div>
 
                 <div className="dropdown-cta">
-                  <a href="/solutions/business" className="nav-button">
+                  <Link href="/solutions/business" className="nav-button">
                     Our Solutions
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -73,12 +77,16 @@ export default function Header() {
               <div className="dropdown dropdown-personal">
                 <div className="dropdown-column">
                   <span className="dropdown-title">Protect Yourself</span>
-                  <a href="/solutions/personal/linkcheck">Check a Link</a>
-                  <a href="/solutions/personal/emailcheck">Scan an Email</a>
-                  <a href="/solutions/personal/phonenumber">
+                  <Link href="/solutions/personal/linkcheck">Check a Link</Link>
+                  <Link href="/solutions/personal/emailcheck">
+                    Scan an Email
+                  </Link>
+                  <Link href="/solutions/personal/phonenumber">
                     Verify a Phone Number
-                  </a>
-                  <a href="/solutions/personal/devicessec">Quick System Scan</a>
+                  </Link>
+                  <Link href="/solutions/personal/devicessec">
+                    Quick System Scan
+                  </Link>
                 </div>
 
                 <div className="dropdown-highlight">
@@ -86,28 +94,28 @@ export default function Header() {
                     Stay safe online in seconds. No technical knowledge
                     required.
                   </p>
-                  <a href="/solutions/personal" className="nav-button">
+                  <Link href="/solutions/personal" className="nav-button">
                     Our Solutions
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
-            <a href="/about" className="nav-link">
+            <Link href="/about" className="nav-link">
               About
-            </a>
-            <a href="/blog" className="nav-link">
+            </Link>
+            <Link href="/blog" className="nav-link">
               Blog
-            </a>
+            </Link>
           </div>
-          <a href="/signin" className="nav-link">
+          <Link href="/signin" className="nav-link">
             Sign in
-          </a>
-          <a href="/signup" className="button-secondary">
+          </Link>
+          <Link href="/signup" className="button-secondary">
             Sign up
-          </a>
-          <a href="/downloads" className="nav-button">
+          </Link>
+          <Link href="/downloads" className="nav-button">
             Downloads
-          </a>
+          </Link>
         </nav>
 
         {/* Burger */}
@@ -128,17 +136,19 @@ export default function Header() {
           </a>
           {mobileEnterpriseOpen && (
             <div className="mobile-dropdown">
-              <a href="/solutions/business/email&phishing">
+              <Link href="/solutions/business/email&phishing">
                 Email & Phishing Protection
-              </a>
-              <a href="/solutions/business/link&domain">
+              </Link>
+              <Link href="/solutions/business/link&domain">
                 Link & Domain Analysis
-              </a>
-              <a href="/solutions/business/fraud">Fraud Detection</a>
-              <a href="/solutions/business/audits">System Audits</a>
-              <a href="/solutions/business/usescases">Use Cases</a>
-              <a href="/solutions/business/compliance">Compliance & Trust</a>
-              <a href="/solutions/business/casesstudies">Case Studies</a>
+              </Link>
+              <Link href="/solutions/business/fraud">Fraud Detection</Link>
+              <Link href="/solutions/business/audits">System Audits</Link>
+              <Link href="/solutions/business/usescases">Use Cases</Link>
+              <Link href="/solutions/business/compliance">
+                Compliance & Trust
+              </Link>
+              <Link href="/solutions/business/casesstudies">Case Studies</Link>
             </div>
           )}
 
@@ -151,27 +161,29 @@ export default function Header() {
           </a>
           {mobilePersonalOpen && (
             <div className="mobile-dropdown">
-              <a href="/solutions/personal/linkcheck">Check a Link</a>
-              <a href="/solutions/personal/emailcheck">Scan an Email</a>
-              <a href="/solutions/personal/phonenumber">
+              <Link href="/solutions/personal/linkcheck">Check a Link</Link>
+              <Link href="/solutions/personal/emailcheck">Scan an Email</Link>
+              <Link href="/solutions/personal/phonenumber">
                 Verify a Phone Number
-              </a>
-              <a href="/solutions/personal/devicessec">Quick System Scan</a>
+              </Link>
+              <Link href="/solutions/personal/devicessec">
+                Quick System Scan
+              </Link>
             </div>
           )}
 
           {/* Buttons */}
           <div className="mobile-btn">
-            <a href="/signin" className="button-secondary">
+            <Link href="/signin" className="button-secondary">
               Sign in
-            </a>
-            <a href="/signup" className="button-secondary">
+            </Link>
+            <Link href="/signup" className="button-secondary">
               Sign up
-            </a>
+            </Link>
           </div>
-          <a href="/downloads" className="nav-button">
+          <Link href="/downloads" className="nav-button">
             Downloads
-          </a>
+          </Link>
         </div>
       )}
     </header>

@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function CaseStudiesPage() {
   return (
@@ -28,12 +29,12 @@ export default function CaseStudiesPage() {
         </div>
 
         <div className="cta">
-          <a href="/contact" className="primary">
+          <Link href="/contact" className="primary">
             Request Case Studies
-          </a>
-          <a href="/solutions/business" className="secondary">
+          </Link>
+          <Link href="/solutions/business" className="secondary">
             Back to Solutions
-          </a>
+          </Link>
         </div>
       </div>
     </main>

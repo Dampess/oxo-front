@@ -1,6 +1,7 @@
 "use client";
 
 import "../styles/auth.scss";
+import Link from "next/link";
 
 export default function SignInPage() {
   return (
@@ -26,7 +27,7 @@ export default function SignInPage() {
         </form>
 
         <div className="auth-footer">
-          No account yet? <a href="/signup">Create one</a>
+          No account yet? <Link href="/signup">Create one</Link>
         </div>
       </div>
     </main>

@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function ScanEmailPage() {
   return (
@@ -37,12 +38,12 @@ export default function ScanEmailPage() {
         </div>
 
         <div className="cta">
-          <a href="/scan-email" className="primary">
+          <Link href="/scan-email" className="primary">
             Scan an Email
-          </a>
-          <a href="/solutions/personal" className="secondary">
+          </Link>
+          <Link href="/solutions/personal" className="secondary">
             Back to Personal Solutions
-          </a>
+          </Link>
         </div>
       </div>
     </main>

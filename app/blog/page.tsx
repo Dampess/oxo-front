@@ -1,4 +1,5 @@
 import "../styles/blog.scss";
+import Link from "next/link";
 
 const posts = [
   {
@@ -56,9 +57,9 @@ export default function BlogPage() {
 
                 <p className="post-excerpt">{post.excerpt}</p>
 
-                <a href={post.slug} className="post-link">
+                <Link href={post.slug} className="post-link">
                   Read article →
-                </a>
+                </Link>
               </article>
             ))}
           </div>
@@ -73,9 +74,9 @@ export default function BlogPage() {
             Test a suspicious link or email before it becomes a real threat.
           </p>
 
-          <a href="/scan" className="button-primary">
+          <Link href="/scan" className="button-primary">
             Start a scan
-          </a>
+          </Link>
         </div>
       </section>
     </main>

@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function ComplianceTrustPage() {
   return (
@@ -38,12 +39,12 @@ export default function ComplianceTrustPage() {
         </div>
 
         <div className="cta">
-          <a href="/contact" className="primary">
+          <Link href="/contact" className="primary">
             Discuss Compliance
-          </a>
-          <a href="/solutions/business" className="secondary">
+          </Link>
+          <Link href="/solutions/business" className="secondary">
             Back to Solutions
-          </a>
+          </Link>
         </div>
       </div>
     </main>

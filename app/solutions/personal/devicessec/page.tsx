@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function DeviceSecurityPage() {
   return (
@@ -37,12 +38,12 @@ export default function DeviceSecurityPage() {
         </div>
 
         <div className="cta">
-          <a href="/downloads" className="primary">
+          <Link href="/downloads" className="primary">
             Download Oxo
-          </a>
-          <a href="/solutions/personal" className="secondary">
+          </Link>
+          <Link href="/solutions/personal" className="secondary">
             Back to Personal Solutions
-          </a>
+          </Link>
         </div>
       </div>
     </main>

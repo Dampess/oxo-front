@@ -1,4 +1,5 @@
 import "../styles/about.scss";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -101,12 +102,12 @@ export default function AboutPage() {
           <p>Start scanning, exploring, and securing with Oxo today.</p>
 
           <div className="cta-actions">
-            <a href="/scan" className="button-primary">
+            <Link href="/scan" className="button-primary">
               Start a scan
-            </a>
-            <a href="/solutions" className="button-secondary">
+            </Link>
+            <Link href="/solutions" className="button-secondary">
               Explore solutions
-            </a>
+            </Link>
           </div>
         </div>
       </section>

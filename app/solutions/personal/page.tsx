@@ -1,4 +1,5 @@
 import "../../styles/solutions-personal.scss";
+import Link from "next/link";
 
 export default function PersonalSolutionsPage() {
   return (
@@ -12,9 +13,9 @@ export default function PersonalSolutionsPage() {
             malicious links.
           </p>
 
-          <a href="/scan" className="button-primary">
+          <Link href="/scan" className="button-primary">
             Start a free scan
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -71,9 +72,9 @@ export default function PersonalSolutionsPage() {
           <h2>Protect your digital life today</h2>
           <p>Start analyzing links, emails, and messages in seconds.</p>
 
-          <a href="/scan" className="button-primary">
+          <Link href="/scan" className="button-primary">
             Start scanning now
-          </a>
+          </Link>
         </div>
       </section>
     </main>

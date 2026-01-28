@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function CheckLinkPage() {
   return (
@@ -38,12 +39,12 @@ export default function CheckLinkPage() {
         </div>
 
         <div className="cta">
-          <a href="/scan" className="primary">
+          <Link href="/scan" className="primary">
             Check a Link
-          </a>
-          <a href="/solutions/personal" className="secondary">
+          </Link>
+          <Link href="/solutions/personal" className="secondary">
             Back to Personal Solutions
-          </a>
+          </Link>
         </div>
       </div>
     </main>

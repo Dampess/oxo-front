@@ -1,6 +1,7 @@
 "use client";
 
 import "../styles/auth.scss";
+import Link from "next/link";
 
 export default function SignUpPage() {
   return (
@@ -31,7 +32,7 @@ export default function SignUpPage() {
         </form>
 
         <div className="auth-footer">
-          Already have an account? <a href="/signin">Sign in</a>
+          Already have an account? <Link href="/signin">Sign in</Link>
         </div>
       </div>
     </main>

@@ -1,4 +1,5 @@
 import "./CTASection.scss";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -10,9 +11,9 @@ export default function CTASection() {
           Get started now with Oxo and take control of your digital security.
         </p>
 
-        <a href="/solutions" className="cta-button">
+        <Link href="/solutions" className="cta-button">
           See Our Solutions
-        </a>
+        </Link>
       </div>
       <div className="image"></div>
     </section>

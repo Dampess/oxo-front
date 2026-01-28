@@ -1,4 +1,5 @@
 import "../styles/solutions.scss";
+import Link from "next/link";
 
 export default function SolutionsPage() {
   return (
@@ -13,12 +14,12 @@ export default function SolutionsPage() {
           </p>
 
           <div className="hero-cta">
-            <a href="/solutions/business" className="btn primary">
+            <Link href="/solutions/business" className="btn primary">
               Business Solutions
-            </a>
-            <a href="/solutions/personal" className="btn secondary">
+            </Link>
+            <Link href="/solutions/personal" className="btn secondary">
               Personal Protection
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -42,9 +43,9 @@ export default function SolutionsPage() {
               <li>Compliance & trust</li>
             </ul>
 
-            <a href="/solutions/business" className="segment-link">
+            <Link href="/solutions/business" className="segment-link">
               Explore business solutions →
-            </a>
+            </Link>
           </div>
 
           {/* PERSONAL */}
@@ -62,9 +63,9 @@ export default function SolutionsPage() {
               <li>Quick system scan</li>
             </ul>
 
-            <a href="/solutions/personal" className="segment-link">
+            <Link href="/solutions/personal" className="segment-link">
               Protect my digital life →
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -114,12 +115,12 @@ export default function SolutionsPage() {
           </p>
 
           <div className="cta-actions">
-            <a href="/scan" className="btn primary">
+            <Link href="/scan" className="btn primary">
               Test a link
-            </a>
-            <a href="/contact" className="btn secondary">
+            </Link>
+            <Link href="/contact" className="btn secondary">
               Contact our team
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function FraudDetectionPage() {
   return (
@@ -6,7 +7,8 @@ export default function FraudDetectionPage() {
       <div className="container">
         <h1 className="title">Fraud Detection</h1>
         <p className="subtitle">
-          Detect, analyze, and prevent digital fraud before it impacts your business.
+          Detect, analyze, and prevent digital fraud before it impacts your
+          business.
         </p>
 
         <div className="card">
@@ -37,8 +39,12 @@ export default function FraudDetectionPage() {
         </div>
 
         <div className="cta">
-          <a href="/contact" className="primary">Talk to an Expert</a>
-          <a href="/solutions/business" className="secondary">Back to Solutions</a>
+          <Link href="/contact" className="primary">
+            Talk to an Expert
+          </Link>
+          <Link href="/solutions/business" className="secondary">
+            Back to Solutions
+          </Link>
         </div>
       </div>
     </main>

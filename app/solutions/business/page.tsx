@@ -1,4 +1,5 @@
 import "../../styles/solutions-business.scss";
+import Link from "next/link";
 
 export default function BusinessSolutionsPage() {
   return (
@@ -13,12 +14,12 @@ export default function BusinessSolutionsPage() {
           </p>
 
           <div className="hero-cta">
-            <a href="/contact" className="button-primary">
+            <Link href="/contact" className="button-primary">
               Request a demo
-            </a>
-            <a href="/solutions" className="button-secondary">
+            </Link>
+            <Link href="/solutions" className="button-secondary">
               View all solutions
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -83,9 +84,9 @@ export default function BusinessSolutionsPage() {
             threats.
           </p>
 
-          <a href="/contact" className="button-primary">
+          <Link href="/contact" className="button-primary">
             Talk to our team
-          </a>
+          </Link>
         </div>
       </section>
     </main>

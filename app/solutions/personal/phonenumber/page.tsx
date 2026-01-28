@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function VerifyPhonePage() {
   return (
@@ -37,12 +38,12 @@ export default function VerifyPhonePage() {
         </div>
 
         <div className="cta">
-          <a href="/verify-number" className="primary">
+          <Link href="/verify-number" className="primary">
             Verify a Number
-          </a>
-          <a href="/solutions/personal" className="secondary">
+          </Link>
+          <Link href="/solutions/personal" className="secondary">
             Back to Personal Solutions
-          </a>
+          </Link>
         </div>
       </div>
     </main>

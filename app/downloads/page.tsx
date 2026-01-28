@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import "../styles/downloads.scss";
 
@@ -44,9 +45,9 @@ export default function DownloadsPage() {
               : "Advanced endpoint protection and threat monitoring for teams."}
           </p>
           <div className="meta">Windows 10+</div>
-          <a href="#" className="btn">
+          <Link href="#" className="btn">
             Download for Windows
-          </a>
+          </Link>
         </div>
 
         {/* MAC */}
@@ -58,9 +59,9 @@ export default function DownloadsPage() {
               : "Enterprise-grade macOS security agent."}
           </p>
           <div className="meta">macOS 12+</div>
-          <a href="#" className="btn">
+          <Link href="#" className="btn">
             Download for macOS
-          </a>
+          </Link>
         </div>
 
         {/* MOBILE */}
@@ -72,9 +73,9 @@ export default function DownloadsPage() {
               : "Secure mobile access for employees and executives."}
           </p>
           <div className="meta">iOS & Android</div>
-          <a href="#" className="btn">
+          <Link href="#" className="btn">
             Coming soon
-          </a>
+          </Link>
         </div>
       </section>
 

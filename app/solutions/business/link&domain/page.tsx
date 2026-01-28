@@ -1,4 +1,5 @@
 import "../../../styles/solutions-sub.scss";
+import Link from "next/link";
 
 export default function LinkDomainPage() {
   return (
@@ -38,12 +39,12 @@ export default function LinkDomainPage() {
         </div>
 
         <div className="cta">
-          <a href="/scan" className="primary">
+          <Link href="/scan" className="primary">
             Analyze a Link
-          </a>
-          <a href="/solutions/business" className="secondary">
+          </Link>
+          <Link href="/solutions/business" className="secondary">
             Back to Solutions
-          </a>
+          </Link>
         </div>
       </div>
     </main>

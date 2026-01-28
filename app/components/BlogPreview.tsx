@@ -1,4 +1,5 @@
 import "./BlogPreview.scss";
+import Link from "next/link";
 
 export default function BlogPreview() {
   const posts = [
@@ -36,9 +37,9 @@ export default function BlogPreview() {
               <span className="post-category">{post.category}</span>
               <h4 className="post-title">{post.title}</h4>
               <p className="post-excerpt">{post.excerpt}</p>
-              <a href={post.link} className="post-link">
+              <Link href={post.link} className="post-link">
                 Read article →
-              </a>
+              </Link>
             </div>
           ))}
         </div>
