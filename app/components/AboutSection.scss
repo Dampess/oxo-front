@@ -1,0 +1,62 @@
+@use "../styles/variables.scss" as vars;
+.about-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-main);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .container {
+    max-width: 80rem; // ~1280px
+    margin: 0 auto;
+    text-align: right;
+  }
+
+  .image {
+    width: 45%;
+    border-radius: 35%;
+    background-image: url("/justStart.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    // Optionnel : overlay pour lisibilité
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.1); // léger filtre sombre
+      border-radius: inherit;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      border-radius: 0%;
+    }
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--oxo-orange);
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .text {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .highlight {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--oxo-blue);
+  }
+}

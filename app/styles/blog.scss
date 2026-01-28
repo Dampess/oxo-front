@@ -1,0 +1,150 @@
+@use "./variables.scss" as vars;
+
+.blog-page {
+  /* ================= HERO ================= */
+  .blog-hero {
+    position: relative;
+    padding: 6.5rem 1.5rem;
+    min-height: 22rem;
+    background: linear-gradient(
+      135deg,
+      rgba(74, 144, 226, 0.12),
+      rgba(255, 127, 80, 0.12)
+    );
+    background-image: url("/blogHero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 25% 0%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 0 0 25% 0%;
+      inset: 0;
+      background-color: rgba(22, 21, 21, 0.4);
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      max-width: 64rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: vars.$oxo-orange;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.15rem;
+      color: vars.$oxo-white;
+      line-height: 1.6;
+    }
+  }
+
+  /* ================= POSTS ================= */
+  .blog-list {
+    padding: 6rem 1.5rem;
+
+    .container {
+      max-width: 96rem;
+      margin: 0 auto;
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .post-card {
+      padding: 2.2rem 2rem;
+      border-radius: 1rem;
+      background-color: var(--bg-main);
+      border: 1px solid #e5e7eb;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+
+        .post-link {
+          transform: translateX(4px);
+        }
+      }
+
+      .post-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+
+        .category {
+          font-weight: 700;
+          text-transform: uppercase;
+          color: vars.$oxo-blue;
+          letter-spacing: 0.05em;
+        }
+
+        .date {
+          color: #9ca3af;
+        }
+      }
+
+      .post-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+
+      .post-excerpt {
+        color: #4b5563;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .post-link {
+        color: vars.$oxo-blue;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  /* ================= CTA ================= */
+  .blog-cta {
+    padding: 6rem 1.5rem;
+    text-align: center;
+    background-color: #f9fafb;
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: vars.$oxo-orange;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      color: #4b5563;
+    }
+  }
+}

@@ -1,0 +1,189 @@
+@use "./variables.scss" as vars;
+
+.about {
+  /* ================= HERO ================= */
+  .about-hero {
+    position: relative;
+    padding: 7rem 1.5rem;
+    min-height: 22rem;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 127, 80, 0.12),
+      rgba(74, 144, 226, 0.12)
+    );
+    background-image: url("/logo_oxo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 25% 0%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 0 0 25% 0%;
+      inset: 0;
+      background-color: rgba(22, 21, 21, 0.4);
+      z-index: 0;
+    }
+    .container {
+      position: relative;
+      max-width: 64rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: vars.$oxo-orange;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: vars.$oxo-white;
+      line-height: 1.6;
+    }
+  }
+
+  /* ================= WHY ================= */
+  .about-why {
+    padding: 5rem 1.5rem;
+
+    .container {
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: vars.$oxo-orange;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* ================= DIFFERENCE ================= */
+  .about-difference {
+    padding: 6rem 1.5rem;
+    background-color: #f9fafb;
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      padding: 2rem;
+      border-radius: 1rem;
+      background-color: white;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+
+      p {
+        color: #4b5563;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  /* ================= MANIFESTO ================= */
+  .about-manifesto {
+    padding: 6rem 1.5rem;
+
+    .container {
+      max-width: 48rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: vars.$oxo-orange;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 1rem;
+
+      li {
+        padding: 1rem;
+        border-radius: 0.75rem;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 1px solid #e5e7eb;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* ================= VALUES ================= */
+  .about-values {
+    padding: 5rem 1.5rem;
+    background-color: #f9fafb;
+
+    .grid-2 {
+      max-width: 64rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #4b5563;
+      line-height: 1.6;
+    }
+  }
+
+  /* ================= CTA ================= */
+  .about-cta {
+    padding: 6rem 1.5rem;
+    text-align: center;
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: vars.$oxo-orange;
+    }
+
+    p {
+      margin-bottom: 2.5rem;
+      font-size: 1.1rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+}

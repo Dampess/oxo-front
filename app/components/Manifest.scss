@@ -1,0 +1,36 @@
+@use "../styles/variables.scss" as vars;
+
+.manifesto {
+  padding: 6rem 1.5rem;
+  background-color: #1a2b40;
+  color: white;
+
+  .container {
+    max-width: 64rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .manifesto-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+
+    strong {
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 1.5rem;
+      color: vars.$oxo-orange;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+
+      strong {
+        font-size: 2.4rem;
+      }
+    }
+  }
+}

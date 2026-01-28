@@ -1,0 +1,106 @@
+@use "../styles/variables.scss" as vars;
+
+.trust-security {
+  padding: 6rem 1.5rem;
+  background-color: vars.$oxo-white;
+
+  .container {
+    max-width: 96rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: vars.$oxo-orange;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: #6b7280;
+    margin-bottom: 4rem;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .pillar {
+    padding: 2rem 1.75rem;
+    border-radius: 1rem;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: rgba(74, 144, 226, 0.15); // subtil blue overlay
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: vars.$oxo-blue;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    @media (max-width: 768px) {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  // Dark mode support
+  @media (prefers-color-scheme: dark) {
+    background-color: #111111;
+
+    .pillar {
+      background-color: vars.$background-dark;
+      border-color: #333;
+
+      .pillar-text {
+        color: vars.$foreground-dark;
+      }
+
+      .icon {
+        background-color: rgba(74, 144, 226, 0.25);
+        color: vars.$oxo-blue;
+      }
+    }
+  }
+}

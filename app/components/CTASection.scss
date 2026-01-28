@@ -1,0 +1,76 @@
+@use "../styles/variables.scss" as vars;
+.cta-section {
+  padding: 2rem 0.5rem;
+  background-color: #fffaef;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .container {
+    padding: 5rem 1.5rem;
+    max-width: 64rem; // ~1024px
+    margin: 0 auto;
+  }
+
+  .image {
+    width: 35%;
+    border-radius: 35%;
+    background-image: url("/handcheck.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      border-radius: 0%;
+    }
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: vars.$oxo-orange;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .text {
+    font-size: 1.125rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: vars.$oxo-orange;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: darken(vars.$oxo-orange, 10%);
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: vars.$background-dark;
+
+    .content {
+      .title,
+      .text {
+        color: vars.$foreground-dark;
+      }
+
+      .cta-button {
+        color: vars.$foreground-dark;
+      }
+    }
+  }
+}

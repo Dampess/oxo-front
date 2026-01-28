@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "downloads": "Téléchargements",
+    "about": "À propos",
+    "signin": "Connexion"
+  },
+  "hero": {
+    "title": "Protégez-vous contre les menaces numériques",
+    "subtitle": "Analysez, détectez et anticipez les fraudes en temps réel."
+  }
+}

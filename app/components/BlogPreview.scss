@@ -1,0 +1,127 @@
+@use "../styles/variables.scss" as vars;
+
+.blog-preview {
+  padding: 6rem 1.5rem;
+  background-color: #fffaef;
+
+  .container {
+    max-width: 96rem;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: vars.$oxo-orange;
+    margin-bottom: 0.75rem;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 4rem;
+    font-size: 1.05rem;
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .post-card {
+    padding: 2rem 1.75rem;
+    border-radius: 1rem;
+    background-color: vars.$oxo-white;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background-color 0.25s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(
+        135deg,
+        vars.$oxo-white 0%,
+        rgba(74, 144, 226, 0.05) 100%
+      );
+
+      .post-link {
+        transform: translateX(4px);
+      }
+    }
+
+    .post-category {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: vars.$oxo-blue;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.25rem;
+      background-color: rgba(74, 144, 226, 0.1);
+    }
+
+    .post-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-excerpt {
+      color: #4b5563;
+      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .post-link {
+      color: vars.$oxo-blue;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // Dark mode support
+  @media (prefers-color-scheme: dark) {
+    background-color: #111;
+
+    .post-card {
+      background-color: #1a1a1a;
+      border-color: #333;
+      color: vars.$foreground-dark;
+
+      .post-excerpt {
+        color: #cfd4d9;
+      }
+
+      .post-category {
+        background-color: rgba(74, 144, 226, 0.2);
+      }
+
+      .post-link {
+        color: vars.$oxo-blue;
+      }
+    }
+  }
+}

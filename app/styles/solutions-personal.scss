@@ -1,0 +1,24 @@
+@use "./solutions-base.scss";
+@use "./variables.scss" as vars;
+
+.solutions.personal {
+  .solutions-hero {
+    background: linear-gradient(
+      135deg,
+      rgba(74, 144, 226, 0.1),
+      rgba(255, 127, 80, 0.05)
+    );
+  }
+
+  .feature {
+    border-left: 4px solid vars.$oxo-blue;
+  }
+
+  .solutions-cta {
+    background: linear-gradient(
+      135deg,
+      rgba(74, 144, 226, 0.12),
+      rgba(255, 127, 80, 0.12)
+    );
+  }
+}

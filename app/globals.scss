@@ -1,0 +1,192 @@
+@use "./styles/variables.scss" as vars;
+
+/* ==========================
+   CSS Variables (Theme)
+========================== */
+:root {
+  /* Brand */
+  --oxo-orange: #{vars.$oxo-orange};
+  --oxo-blue: #{vars.$oxo-blue};
+
+  /* Light theme */
+  --bg-main: #{vars.$background-light};
+  --text-main: #{vars.$foreground-light};
+  --card-bg: #ffffff;
+  --border-color: #e5e5e5;
+
+  /* Fonts */
+  --font-sans: #{vars.$font-sans};
+  --font-mono: #{vars.$font-mono};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #{vars.$background-dark};
+    --text-main: #{vars.$foreground-dark};
+    --card-bg: #111111;
+    --border-color: #1f1f1f;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* ==========================
+   Headings
+========================== */
+h1,
+h2,
+h3 {
+  color: vars.$oxo-orange;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* ==========================
+   Buttons
+========================== */
+.button-primary {
+  background-color: var(--oxo-orange);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.button-secondary {
+  background-color: var(--oxo-blue);
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: 0.3s;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+/* ==========================
+   Cards
+========================== */
+.card {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-safe {
+  border-left: 4px solid green;
+}
+.card-warning {
+  border-left: 4px solid orange;
+}
+.card-danger {
+  border-left: 4px solid red;
+}
+
+/* ==========================
+   Forms
+========================== */
+input,
+textarea,
+select {
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-sans);
+
+  &:focus {
+    outline: none;
+    border-color: var(--oxo-orange);
+    box-shadow: 0 0 0 2px rgba(255, 127, 80, 0.3);
+  }
+}
+/* ==========================
+  Scroll to top
+========================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  z-index: 60;
+
+  background: var(--oxo-blue);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease,
+    opacity 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    filter: brightness(0.9);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+/* Dark mode friendly */
+@media (prefers-color-scheme: dark) {
+  .scroll-to-top {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.75rem;
+
+  a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    opacity: 0.6;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 1;
+      color: var(--oxo-orange);
+    }
+  }
+}

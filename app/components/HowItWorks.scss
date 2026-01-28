@@ -1,0 +1,120 @@
+@use "../styles/variables.scss" as vars;
+
+.how-it-works {
+  padding: 6rem 1.5rem;
+  background-color: #fffaef;
+
+  .container {
+    max-width: 96rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: vars.$oxo-orange;
+    margin-bottom: 0.75rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subtitle {
+    color: #6b7280;
+    font-size: 1.05rem;
+    margin-bottom: 4rem;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .step {
+    position: relative;
+    background-color: vars.$oxo-white;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .step-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: vars.$oxo-blue;
+      opacity: 0.2;
+      margin-bottom: 1rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 0;
+
+      @media (min-width: 768px) {
+        font-size: 4rem;
+      }
+    }
+
+    .step-icon {
+      font-size: 2rem;
+      color: vars.$oxo-orange;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+      z-index: 1;
+      position: relative;
+    }
+
+    .step-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      z-index: 1;
+      position: relative;
+
+      &:hover {
+        color: vars.$oxo-orange;
+        transition: color 0.3s ease;
+      }
+    }
+
+    .step-text {
+      color: #4b5563;
+      font-size: 1rem;
+      line-height: 1.6;
+      z-index: 1;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  // Dark mode
+  @media (prefers-color-scheme: dark) {
+    background-color: #111111;
+
+    .step {
+      background-color: vars.$background-dark;
+      border-color: #333;
+
+      .step-text {
+        color: vars.$foreground-dark;
+      }
+    }
+  }
+}

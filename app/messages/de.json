@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "solutions": "Lösungen",
+    "downloads": "Downloads",
+    "about": "Über uns",
+    "blog": "Blog",
+    "signin": "Anmelden",
+    "signup": "Registrieren"
+  },
+  "cta": {
+    "start": "Loslegen",
+    "contact": "Kontakt"
+  }
+}
