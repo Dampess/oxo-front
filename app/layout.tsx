@@ -1,6 +1,6 @@
 import "./globals.scss";
 import Header from "./components/Header";
-import ScrollToTop from "./components/ui/ScrollToTop";
+import ScrollToTop from "./components/ui/scrolltotop";
 import Footer from "./components/Footer";
 import { ReactNode } from "react";
 
