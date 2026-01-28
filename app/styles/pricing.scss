@@ -1,0 +1,199 @@
+@use "./variables.scss" as vars;
+
+.pricing {
+  background-color: var(--bg-main);
+}
+
+/* ================= HERO ================= */
+.pricing-hero {
+  padding: 6rem 1.5rem 4rem;
+  text-align: center;
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .subtitle {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+  }
+}
+
+/* ================= SECTIONS ================= */
+.pricing-section {
+  padding: 4rem 1.5rem;
+
+  &.alt {
+    background-color: var(--bg-soft);
+  }
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: vars.$oxo-orange;
+  }
+}
+
+/* ================= GRID ================= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* ================= CARD ================= */
+.pricing-card {
+  background-color: var(--card-bg);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  &.highlight {
+    border: 2px solid vars.$oxo-blue;
+    transform: translateY(-6px);
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+
+    span {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+
+    li {
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+}
+
+/* ================= TOGGLE ================= */
+.billing-toggle {
+  margin-top: 2rem;
+  display: inline-flex;
+  background-color: var(--bg-soft);
+  border-radius: 999px;
+  padding: 0.25rem;
+
+  button {
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: 0.25s;
+
+    span {
+      color: vars.$oxo-orange;
+      font-size: 0.8rem;
+      margin-left: 0.25rem;
+    }
+
+    &.active {
+      background-color: vars.$oxo-blue;
+      color: white;
+    }
+  }
+}
+
+/* ================= COMPARISON TABLE ================= */
+.pricing-compare {
+  padding: 5rem 1.5rem;
+  background-color: var(--bg-main);
+
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 3rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+
+    th,
+    td {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background-color: var(--bg-soft);
+      font-weight: 700;
+    }
+
+    td:first-child,
+    th:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    tbody tr {
+      border-top: 1px solid var(--border-color);
+    }
+  }
+}
+
+/* ================= CTA ================= */
+.pricing-cta {
+  padding: 5rem 1.5rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+}

@@ -100,6 +100,9 @@ export default function Header() {
                 </div>
               </div>
             </div>
+            <Link href="/pricing" className="nav-link">
+              Pricing
+            </Link>
             <Link href="/about" className="nav-link">
               About
             </Link>
@@ -171,6 +174,9 @@ export default function Header() {
               </Link>
             </div>
           )}
+          <Link href="/pricing" className="nav-link">
+            Pricing
+          </Link>
 
           {/* Buttons */}
           <div className="mobile-btn">
