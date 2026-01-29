@@ -1,0 +1,68 @@
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.dashboard-subtitle {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+
+  h3 {
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  .stat {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+  }
+
+  .risk-low {
+    color: #10b981;
+  }
+
+  span {
+    font-size: 0.8rem;
+    color: #9ca3af;
+  }
+}
+
+.dashboard-card {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-main);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,17 +1,22 @@
 @use "./solutions-base.scss";
-@use "./variables.scss" as vars;
+@use "../../styles/variables.scss" as vars;
 
-.solutions.personal {
+.solutions.business {
   .solutions-hero {
     background: linear-gradient(
       135deg,
-      rgba(74, 144, 226, 0.1),
-      rgba(255, 127, 80, 0.05)
+      rgba(10, 10, 10, 0.9),
+      rgba(30, 30, 30, 0.9)
     );
+
+    h1,
+    p {
+      color: #ffffff;
+    }
   }
 
   .feature {
-    border-left: 4px solid vars.$oxo-blue;
+    border-left: 4px solid vars.$oxo-orange;
   }
 
   .solutions-benefits {
@@ -31,8 +36,8 @@
   .solutions-cta {
     background: linear-gradient(
       135deg,
-      rgba(74, 144, 226, 0.12),
-      rgba(255, 127, 80, 0.12)
+      rgba(255, 127, 80, 0.15),
+      rgba(74, 144, 226, 0.15)
     );
   }
 }
