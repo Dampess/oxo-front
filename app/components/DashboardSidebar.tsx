@@ -22,27 +22,27 @@ const sections = [
     items: [
       {
         label: "Email & Phishing",
-        href: "/app/email-protection",
+        href: "/email-protection",
         icon: "📧",
       },
       {
         label: "Link & Domain Analysis",
-        href: "/app/link-analysis",
+        href: "/link-protection",
         icon: "🔗",
       },
       {
         label: "Fraud Detection",
-        href: "/app/fraud-detection",
+        href: "/fraud-detection",
         icon: "🚨",
       },
       {
         label: "System Audits",
-        href: "/app/audits",
+        href: "/audits",
         icon: "🧪",
       },
       {
         label: "Compliance & Trust",
-        href: "/app/compliance",
+        href: "/compliance",
         icon: "🛡️",
       },
     ],
@@ -52,12 +52,12 @@ const sections = [
     items: [
       {
         label: "Team & Users",
-        href: "/app/team",
+        href: "/team",
         icon: "👥",
       },
       {
         label: "Settings",
-        href: "/app/settings",
+        href: "/settings",
         icon: "⚙️",
       },
     ],
@@ -81,7 +81,7 @@ export default function DashboardSidebar() {
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <div className="sidebar-logo">
           <Image
-            src="/logo_oxo.jpg"
+            src="/logo_oxo.png"
             alt="Oxo logo"
             width={70}
             height={70}

@@ -17,7 +17,7 @@ export default function Header() {
         <Link href="/" className="nav-link">
           <div className="brand">
             <Image
-              src="/logo_oxo.jpg"
+              src="/logo_oxo.png"
               alt="Oxo logo"
               width={70}
               height={70}
