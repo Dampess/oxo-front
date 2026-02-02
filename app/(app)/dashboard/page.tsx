@@ -1,110 +1,107 @@
 "use client";
 
 import "../styles/dashboard.scss";
+import Link from "next/link";
+
+const stats = [
+  {
+    label: "Emails analyzed",
+    value: 124,
+    icon: "📧",
+  },
+  {
+    label: "Links checked",
+    value: 342,
+    icon: "🔗",
+  },
+  {
+    label: "Threats blocked",
+    value: 7,
+    icon: "🚨",
+  },
+];
+
+const recentAlerts = [
+  {
+    id: "1",
+    type: "link",
+    title: "Suspicious link blocked",
+    risk: "danger",
+    date: "2 hours ago",
+  },
+  {
+    id: "2",
+    type: "email",
+    title: "Phishing email detected",
+    risk: "suspicious",
+    date: "Yesterday",
+  },
+  {
+    id: "3",
+    type: "phone",
+    title: "Spam phone number reported",
+    risk: "safe",
+    date: "2 days ago",
+  },
+];
 
 export default function DashboardPage() {
   return (
     <main className="dashboard">
-      {/* ================= RISK STATUS ================= */}
-      <section className="risk-status high">
+      {/* STATUS */}
+      <section className="dashboard-status">
+        <div className="status-icon">🟢</div>
         <div>
-          <h1>🚨 Immediate action required</h1>
-          <p>1 high-risk threat detected in the last 24 hours.</p>
-        </div>
-        <a href="/app/email-protection" className="btn">
-          Review threat
-        </a>
-      </section>
-
-      {/* ================= STATS ================= */}
-      <section className="stats-grid">
-        <div className="stat-card">
-          <span className="icon">🚨</span>
-          <div>
-            <p className="label">Threats detected</p>
-            <p className="value">12</p>
-            <p className="meta">Last 7 days</p>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <span className="icon">📧</span>
-          <div>
-            <p className="label">Top channel</p>
-            <p className="value">Email</p>
-            <p className="meta">67% of threats</p>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <span className="icon">📈</span>
-          <div>
-            <p className="label">Risk trend</p>
-            <p className="value danger">+14%</p>
-            <p className="meta">vs last week</p>
-          </div>
-        </div>
-
-        <div className="stat-card">
-          <span className="icon">⏳</span>
-          <div>
-            <p className="label">Remaining scans</p>
-            <p className="value">18</p>
-            <p className="meta">Pro plan</p>
-          </div>
+          <h1>You are protected</h1>
+          <p>Oxo is actively monitoring your activity.</p>
         </div>
       </section>
 
-      {/* ================= RECENT THREATS ================= */}
-      <section className="recent-threats">
-        <h2>Recent threats</h2>
-
-        <div className="threat-list">
-          <div className="threat-item high">
-            <span>📧</span>
-            <div className="info">
-              <p className="title">Fake PayPal invoice</p>
-              <p className="meta">Email · 2 hours ago</p>
+      {/* STATS */}
+      <section className="dashboard-stats">
+        {stats.map((stat) => (
+          <div key={stat.label} className="stat-card">
+            <span className="icon">{stat.icon}</span>
+            <div>
+              <p className="value">{stat.value}</p>
+              <p className="label">{stat.label}</p>
             </div>
-            <a href="/app/email-protection/1">Review</a>
           </div>
-
-          <div className="threat-item medium">
-            <span>🔗</span>
-            <div className="info">
-              <p className="title">Suspicious shortened link</p>
-              <p className="meta">Link · Yesterday</p>
-            </div>
-            <a href="/app/link-analysis/2">Review</a>
-          </div>
-
-          <div className="threat-item low">
-            <span>📧</span>
-            <div className="info">
-              <p className="title">Marketing email flagged</p>
-              <p className="meta">Email · 2 days ago</p>
-            </div>
-            <a href="/app/email-protection/3">Details</a>
-          </div>
-        </div>
+        ))}
       </section>
 
-      {/* ================= USAGE ================= */}
-      <section className="usage-card">
-        <div className="usage-header">
-          <h3>Monthly usage</h3>
-          <span>82 / 100 analyses</span>
+      {/* RECENT ALERTS */}
+      <section className="dashboard-alerts">
+        <div className="alerts-header">
+          <h2>Recent activity</h2>
+          <Link href="/alerts" className="view-all">
+            View all
+          </Link>
         </div>
 
-        <div className="progress">
-          <div className="bar" style={{ width: "82%" }} />
+        <div className="alerts-list">
+          {recentAlerts.map((alert) => (
+            <Link
+              key={alert.id}
+              href={`/alerts/${alert.id}`}
+              className={`alert-item ${alert.risk}`}
+            >
+              <div className="alert-left">
+                <span className="alert-icon">
+                  {alert.type === "email" && "📧"}
+                  {alert.type === "link" && "🔗"}
+                  {alert.type === "phone" && "📱"}
+                </span>
+                <div>
+                  <p className="alert-title">{alert.title}</p>
+                  <span className="alert-date">{alert.date}</span>
+                </div>
+              </div>
+
+              <span className={`alert-badge ${alert.risk}`}>{alert.risk}</span>
+            </Link>
+          ))}
         </div>
-
-        <p className="usage-info">You are close to your monthly limit.</p>
-
-        <a href="/pricing" className="upgrade">
-          Upgrade plan
-        </a>
       </section>
     </main>
   );

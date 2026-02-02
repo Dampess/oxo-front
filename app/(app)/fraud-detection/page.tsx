@@ -1,88 +1,61 @@
 "use client";
 
 import { useState } from "react";
-import "../styles/fraud-detection.scss";
+import "../styles/check-tools.scss";
 
 export default function FraudDetectionPage() {
-  const [input, setInput] = useState("");
-  const [mode, setMode] = useState<"info" | "phone">("info");
+  const [mode, setMode] = useState<"phone" | "sms">("phone");
+  const [value, setValue] = useState("");
   const [result, setResult] = useState<string | null>(null);
-  const quota = 5; // Exemple dynamique selon le plan
 
-  const handleAnalyze = () => {
-    if (!input) return alert("Please enter some information or a phone number");
-
-    let analysisResult = "";
-    if (mode === "info") {
-      // Simulation d'analyse transaction ou info
-      const isFraud = Math.random() > 0.7;
-      analysisResult = isFraud
-        ? "⚠️ Potential fraud detected. Please review carefully!"
-        : "✅ No fraud detected. The transaction seems safe.";
-    } else {
-      // Simulation d'analyse numéro de téléphone
-      const isSuspicious = Math.random() > 0.6;
-      analysisResult = isSuspicious
-        ? `⚠️ The phone number ${input} is suspicious!`
-        : `✅ The phone number ${input} seems safe.`;
-    }
-
-    setResult(analysisResult);
-  };
+  function analyze() {
+    if (!value) return;
+    setResult(
+      mode === "phone"
+        ? "This number has been reported multiple times 🚨"
+        : "This SMS contains scam indicators ⚠️",
+    );
+  }
 
   return (
-    <main className="fraud-detection">
-      <div className="container">
-        <h1 className="title">Fraud Detection</h1>
-        <p className="subtitle">
-          Analyze transactions, suspicious info, or phone numbers.
-        </p>
+    <main className="check-tool">
+      <header>
+        <h1>Fraud Detection</h1>
+        <p>Check suspicious phone numbers or SMS messages</p>
+      </header>
 
-        <div className="mode-toggle">
-          <button
-            className={mode === "info" ? "active" : ""}
-            onClick={() => setMode("info")}
-          >
-            Info / Transaction
-          </button>
+      <div className="card">
+        <div className="toggle">
           <button
             className={mode === "phone" ? "active" : ""}
             onClick={() => setMode("phone")}
           >
             Phone Number
           </button>
-        </div>
-
-        <div className="scan-card">
-          <textarea
-            placeholder={
-              mode === "info"
-                ? "Paste transaction details or suspicious info..."
-                : "Enter the phone number to check..."
-            }
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-
-          <div className="scan-footer">
-            <span className="quota">Quota remaining: {quota} analyses</span>
-            <button className="scan-btn" onClick={handleAnalyze}>
-              Analyze
-            </button>
-          </div>
-        </div>
-
-        {result && (
-          <div
-            className={`result-card ${
-              result.includes("✅") ? "safe" : "danger"
-            }`}
+          <button
+            className={mode === "sms" ? "active" : ""}
+            onClick={() => setMode("sms")}
           >
-            <h3>Analysis Result</h3>
-            <p>{result}</p>
-          </div>
-        )}
+            SMS Content
+          </button>
+        </div>
+
+        <textarea
+          placeholder={
+            mode === "phone"
+              ? "+33 6 12 34 56 78"
+              : "Paste the SMS content here..."
+          }
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+
+        <button className="primary" onClick={analyze}>
+          Analyze
+        </button>
       </div>
+
+      {result && <div className="result">{result}</div>}
     </main>
   );
 }

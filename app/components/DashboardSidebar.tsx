@@ -15,35 +15,31 @@ const sections = [
         href: "/dashboard",
         icon: "📊",
       },
+      {
+        label: "Alerts",
+        href: "/alerts",
+        icon: "🚨",
+        badge: 2, // mock (plus tard dynamique)
+      },
     ],
   },
   {
-    title: "Business Security",
+    title: "Protection",
     items: [
       {
-        label: "Email & Phishing",
+        label: "Check Email",
         href: "/email-protection",
         icon: "📧",
       },
       {
-        label: "Link & Domain Analysis",
+        label: "Check Link",
         href: "/link-protection",
         icon: "🔗",
       },
       {
         label: "Fraud Detection",
         href: "/fraud-detection",
-        icon: "🚨",
-      },
-      {
-        label: "System Audits",
-        href: "/audits",
-        icon: "🧪",
-      },
-      {
-        label: "Compliance & Trust",
-        href: "/compliance",
-        icon: "🛡️",
+        icon: "📱",
       },
     ],
   },
@@ -51,14 +47,14 @@ const sections = [
     title: "Account",
     items: [
       {
-        label: "Team & Users",
-        href: "/team",
-        icon: "👥",
-      },
-      {
         label: "Settings",
         href: "/settings",
         icon: "⚙️",
+      },
+      {
+        label: "Plan",
+        href: "/plan",
+        icon: "📅",
       },
     ],
   },
@@ -70,7 +66,7 @@ export default function DashboardSidebar() {
 
   return (
     <>
-      {/* Bouton toggle MOBILE */}
+      {/* Toggle mobile */}
       <button
         className={`sidebar-toggle ${open ? "open" : ""}`}
         onClick={() => setOpen(!open)}
@@ -83,8 +79,8 @@ export default function DashboardSidebar() {
           <Image
             src="/logo_oxo.png"
             alt="Oxo logo"
-            width={70}
-            height={70}
+            width={56}
+            height={56}
             className="logo"
           />
 
@@ -107,10 +103,12 @@ export default function DashboardSidebar() {
                     key={item.href}
                     href={item.href}
                     className={`sidebar-link ${active ? "active" : ""}`}
-                    onClick={() => setOpen(false)} // 👈 ferme sur mobile
+                    onClick={() => setOpen(false)}
                   >
                     <span className="icon">{item.icon}</span>
                     <span>{item.label}</span>
+
+                    {item.badge && <span className="badge">{item.badge}</span>}
                   </Link>
                 );
               })}

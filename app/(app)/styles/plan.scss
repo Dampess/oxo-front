@@ -1,0 +1,114 @@
+.plan-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .card {
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .current-plan .actions {
+    display: flex;
+    gap: 1rem;
+
+    .cancel {
+      background: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  }
+
+  .plans-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .plan-card {
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: 0.2s;
+
+    &.active {
+      border-color: var(--oxo-blue);
+    }
+
+    h3 {
+      font-weight: 600;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      margin: 0.25rem 0;
+    }
+
+    .quota {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    button {
+      margin-top: 0.75rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      border: none;
+      background: var(--oxo-blue);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .payment-history {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 0.75rem;
+        border-bottom: 1px solid var(--border-color);
+        text-align: left;
+        font-size: 0.9rem;
+      }
+
+      th {
+        font-weight: 600;
+        color: var(--text-muted);
+      }
+    }
+  }
+}
