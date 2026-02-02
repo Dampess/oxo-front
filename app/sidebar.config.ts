@@ -1,6 +1,18 @@
+// ===== Types =====
+export type SidebarItem = {
+  label: string;
+  href: string;
+  icon: string;
+};
+
+export type SidebarSection = {
+  title: string;
+  items: SidebarItem[];
+};
+
 export type UserRole = "personal" | "company" | "admin";
 
-export const sidebarConfig: Record<UserRole, unknown[]> = {
+export const sidebarConfig: Record<UserRole, SidebarSection[]> = {
   personal: [
     {
       title: "Overview",
