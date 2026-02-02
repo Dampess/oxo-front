@@ -1,17 +1,17 @@
-// app/(app)/layout.tsx
-import "./styles/auth-layout.scss";
+"use client";
+
+import AppHeader from "../components/AppHeader";
 import DashboardSidebar from "../components/DashboardSidebar";
-import AppHeaderr from "../components/AppHeader";
 import Footer from "../components/Footer";
+import "./styles/app-layout.scss";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="app-layout">
+    <div className="app-shell">
       <DashboardSidebar />
-
       <div className="app-content">
-        <AppHeaderr />
-        <main className="app-main">{children}</main>
+        <AppHeader />
+        <main>{children}</main>
         <Footer />
       </div>
     </div>

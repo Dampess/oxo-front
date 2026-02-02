@@ -26,7 +26,7 @@ export default function PlanPage() {
   const renewalDate = "2026-02-15";
 
   const handleChangePlan = (newPlan: string) => {
-    setPlan(newPlan as any);
+    setPlan(newPlan as never);
     alert(`Plan changed to ${newPlan} (mock) ✅`);
   };
 

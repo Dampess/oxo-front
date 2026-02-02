@@ -5,68 +5,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { sidebarConfig, UserRole } from "../sidebar.config";
 
-const sections = [
-  {
-    title: "Overview",
-    items: [
-      {
-        label: "Dashboard",
-        href: "/dashboard",
-        icon: "📊",
-      },
-      {
-        label: "Alerts",
-        href: "/alerts",
-        icon: "🚨",
-        badge: 2, // mock (plus tard dynamique)
-      },
-    ],
-  },
-  {
-    title: "Protection",
-    items: [
-      {
-        label: "Check Email",
-        href: "/email-protection",
-        icon: "📧",
-      },
-      {
-        label: "Check Link",
-        href: "/link-protection",
-        icon: "🔗",
-      },
-      {
-        label: "Fraud Detection",
-        href: "/fraud-detection",
-        icon: "📱",
-      },
-    ],
-  },
-  {
-    title: "Account",
-    items: [
-      {
-        label: "Settings",
-        href: "/settings",
-        icon: "⚙️",
-      },
-      {
-        label: "Plan",
-        href: "/plan",
-        icon: "📅",
-      },
-    ],
-  },
-];
+function getUserRole(): UserRole {
+  // mock — plus tard via auth
+  return "company";
+}
 
 export default function DashboardSidebar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const role = getUserRole();
+  const sections = sidebarConfig[role];
 
   return (
     <>
-      {/* Toggle mobile */}
+      {/* MOBILE TOGGLE */}
       <button
         className={`sidebar-toggle ${open ? "open" : ""}`}
         onClick={() => setOpen(!open)}
@@ -79,11 +33,10 @@ export default function DashboardSidebar() {
           <Image
             src="/logo_oxo.png"
             alt="Oxo logo"
-            width={56}
-            height={56}
+            width={48}
+            height={48}
             className="logo"
           />
-
           <div>
             <div className="brand-name">Oxo</div>
             <div className="brand-tagline">See. Smell. Protect.</div>
@@ -107,8 +60,6 @@ export default function DashboardSidebar() {
                   >
                     <span className="icon">{item.icon}</span>
                     <span>{item.label}</span>
-
-                    {item.badge && <span className="badge">{item.badge}</span>}
                   </Link>
                 );
               })}
@@ -117,7 +68,6 @@ export default function DashboardSidebar() {
         </nav>
       </aside>
 
-      {/* Overlay mobile */}
       {open && (
         <div className="sidebar-overlay" onClick={() => setOpen(false)} />
       )}
