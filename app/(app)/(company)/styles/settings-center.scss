@@ -1,0 +1,157 @@
+.company-settings {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* HEADER */
+.settings-header {
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+}
+
+/* CARD */
+.settings-card {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .muted {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+}
+
+/* FORM */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--bg-main);
+    color: var(--text-main);
+  }
+}
+
+/* SECURITY */
+.security-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* TOGGLE */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  span {
+    width: 36px;
+    height: 20px;
+    background: var(--bg-hover);
+    border-radius: 999px;
+    position: relative;
+    transition: background 0.2s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: white;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: transform 0.2s;
+    }
+  }
+
+  input:checked + span {
+    background: var(--oxo-blue);
+
+    &::after {
+      transform: translateX(16px);
+    }
+  }
+}
+
+/* ROLE */
+.role-select {
+  max-width: 320px;
+
+  label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* BUTTONS */
+button.primary {
+  background: var(--oxo-blue);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button.link {
+  background: none;
+  border: none;
+  color: var(--oxo-blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.danger {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* DANGER */
+.danger-zone {
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.05);
+}

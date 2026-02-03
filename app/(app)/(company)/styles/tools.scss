@@ -1,0 +1,93 @@
+@use "../../../styles/variables.scss" as vars;
+
+.company-tools {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .tools-header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    input {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-main);
+      font-size: 0.95rem;
+
+      &:focus {
+        outline: none;
+        border-color: var(--oxo-blue);
+        background: var(--bg-main);
+      }
+    }
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+
+    .tool-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: var(--bg-secondary);
+      padding: 1rem 1.25rem;
+      border-radius: 1rem;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: background 0.2s;
+
+      &:hover {
+        background: var(--bg-hover);
+      }
+
+      .tool-icon {
+        font-size: 2rem;
+      }
+
+      .tool-info {
+        strong {
+          display: block;
+          font-size: 1rem;
+          margin-bottom: 0.25rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+          color: var(--text-muted);
+          margin: 0;
+        }
+      }
+    }
+
+    .empty-state {
+      grid-column: 1/-1;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+
+      span {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import "../styles/enterprise-dashboard.scss";
-import Link from "next/link";
 
 // ==== MOCK DATA ====
 const stats = [
@@ -45,6 +45,28 @@ export default function CompanyDashboardPage() {
   const [selectedPeriod, setSelectedPeriod] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
   const logsPerPage = 10;
+  const [scanMode, setScanMode] = useState<"email" | "link" | "phone" | "ip">(
+    "email",
+  );
+  const [scanInput, setScanInput] = useState("");
+  const [scanResult, setScanResult] = useState<{
+    status: "safe" | "suspicious" | "danger";
+    title: string;
+    summary: string;
+  } | null>(null);
+
+  function handleQuickScan() {
+    if (!scanInput) return alert("Please enter data to scan");
+
+    // Simulation rapide
+    const statuses = ["safe", "suspicious", "danger"] as const;
+    const status = statuses[Math.floor(Math.random() * 3)];
+    setScanResult({
+      status,
+      title: `Quick scan result: ${status.toUpperCase()}`,
+      summary: `Scanned content in mode "${scanMode}"`,
+    });
+  }
 
   // Filtrage
   const filteredAlerts = alerts.filter((a) => {
@@ -76,7 +98,7 @@ export default function CompanyDashboardPage() {
           <h1>Security Overview</h1>
           <p>Real-time visibility of your organization’s security posture</p>
         </div>
-        <Link href="/company/alerts" className="view-alerts">
+        <Link href="/alerts-center" className="view-alerts">
           View all alerts →
         </Link>
       </header>
@@ -98,48 +120,150 @@ export default function CompanyDashboardPage() {
         ))}
       </section>
 
-      {/* Filters */}
-      <section className="log-filters">
-        <select
-          value={selectedUser}
-          onChange={(e) => setSelectedUser(e.target.value)}
-        >
-          {users.map((u) => (
-            <option key={u} value={u}>
-              {u}
-            </option>
+      {/* Graph CSS */}
+      <section className="alerts-graph">
+        <h2>Critical vs Resolved Alerts</h2>
+        <div className="trend-chart">
+          {trendData.map((t) => (
+            <div key={t.label} className="bar-group">
+              <div
+                className="bar critical"
+                style={{ height: `${t.critical * 10}px` }}
+              >
+                <span>{t.critical}</span>
+              </div>
+              <div
+                className="bar resolved"
+                style={{ height: `${t.resolved * 10}px` }}
+              >
+                <span>{t.resolved}</span>
+              </div>
+              <div className="label">{t.label}</div>
+            </div>
           ))}
-        </select>
-        <select
-          value={selectedType}
-          onChange={(e) => setSelectedType(e.target.value)}
-        >
-          {types.map((t) => (
-            <option key={t} value={t}>
-              {t}
-            </option>
-          ))}
-        </select>
-        <select
-          value={selectedPeriod}
-          onChange={(e) => setSelectedPeriod(e.target.value)}
-        >
-          {periods.map((p) => (
-            <option key={p} value={p}>
-              {p}
-            </option>
-          ))}
-        </select>
+        </div>
+        <div className="legend">
+          <div>
+            <span className="box critical"></span> Critical
+          </div>
+          <div>
+            <span className="box resolved"></span> Resolved
+          </div>
+        </div>
       </section>
+      {/* QUICK SCAN WIDGET */}
+      <section className="quick-scan">
+        <h2>Quick Security Scan</h2>
 
+        <div className="scan-tabs">
+          <button
+            className={scanMode === "email" ? "active" : ""}
+            onClick={() => setScanMode("email")}
+          >
+            Email
+          </button>
+          <button
+            className={scanMode === "link" ? "active" : ""}
+            onClick={() => setScanMode("link")}
+          >
+            Link / Domain
+          </button>
+          <button
+            className={scanMode === "phone" ? "active" : ""}
+            onClick={() => setScanMode("phone")}
+          >
+            Phone / SMS
+          </button>
+          <button
+            className={scanMode === "ip" ? "active" : ""}
+            onClick={() => setScanMode("ip")}
+          >
+            IP
+          </button>
+        </div>
+
+        <textarea
+          placeholder={
+            scanMode === "email"
+              ? "Paste your email here..."
+              : scanMode === "link"
+                ? "Paste link or domain..."
+                : scanMode === "ip"
+                  ? "Paste IP Adress..."
+                  : "Paste phone number or message..."
+          }
+          value={scanInput}
+          onChange={(e) => setScanInput(e.target.value)}
+        />
+
+        <div className="scan-actions">
+          <button className="scan-btn" onClick={handleQuickScan}>
+            Scan
+          </button>
+          <Link
+            href={
+              scanMode === "email"
+                ? "/check-email"
+                : scanMode === "link"
+                  ? "/check-link"
+                  : scanMode === "ip"
+                    ? "/ip-scan"
+                    : "/scam-detection"
+            }
+            className="view-more"
+          >
+            See full tool →
+          </Link>
+        </div>
+
+        {scanResult && (
+          <div className={`scan-result ${scanResult.status}`}>
+            <strong>{scanResult.title}</strong>
+            <p>{scanResult.summary}</p>
+          </div>
+        )}
+      </section>
       {/* Active Alerts */}
       <section className="alerts-list-section">
         <h2>Active Threats</h2>
+        {/* Filters */}
+        <div className="log-filters">
+          <select
+            value={selectedUser}
+            onChange={(e) => setSelectedUser(e.target.value)}
+          >
+            {users.map((u) => (
+              <option key={u} value={u}>
+                {u}
+              </option>
+            ))}
+          </select>
+          <select
+            value={selectedType}
+            onChange={(e) => setSelectedType(e.target.value)}
+          >
+            {types.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+          <select
+            value={selectedPeriod}
+            onChange={(e) => setSelectedPeriod(e.target.value)}
+          >
+            {periods.map((p) => (
+              <option key={p} value={p}>
+                {p}
+              </option>
+            ))}
+          </select>
+        </div>
         <div className="alerts-list">
           {displayedAlerts.map((alert) => (
             <Link
               key={alert.id}
-              href={`/company/alerts/${alert.id}`}
+              href={`/alerts-center/${alert.id}`}
               className={`alert-row ${alert.risk}`}
             >
               <span className="icon">
@@ -175,38 +299,6 @@ export default function CompanyDashboardPage() {
           >
             ▶
           </button>
-        </div>
-      </section>
-
-      {/* Graph CSS */}
-      <section className="alerts-graph">
-        <h2>Critical vs Resolved Alerts</h2>
-        <div className="trend-chart">
-          {trendData.map((t) => (
-            <div key={t.label} className="bar-group">
-              <div
-                className="bar critical"
-                style={{ height: `${t.critical * 10}px` }}
-              >
-                <span>{t.critical}</span>
-              </div>
-              <div
-                className="bar resolved"
-                style={{ height: `${t.resolved * 10}px` }}
-              >
-                <span>{t.resolved}</span>
-              </div>
-              <div className="label">{t.label}</div>
-            </div>
-          ))}
-        </div>
-        <div className="legend">
-          <div>
-            <span className="box critical"></span> Critical
-          </div>
-          <div>
-            <span className="box resolved"></span> Resolved
-          </div>
         </div>
       </section>
     </main>

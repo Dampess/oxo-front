@@ -49,17 +49,19 @@ export const sidebarConfig: Record<UserRole, SidebarSection[]> = {
     {
       title: "Security",
       items: [
-        { label: "Email Security", href: "/email-protection", icon: "📧" },
-        { label: "Link & Domain", href: "/link-protection", icon: "🔗" },
-        { label: "Fraud Detection", href: "/fraud-detection", icon: "🚨" },
+        { label: "Analytics", href: "/analytics", icon: "🔍" },
+        { label: "Compliance", href: "/compliance", icon: "✅" },
+        { label: "Audit Logs", href: "/audit-logs", icon: "📱" },
+        { label: "Intégrations", href: "/integration", icon: "🔗" },
+        { label: "Tools", href: "/tools", icon: "🛠️" },
       ],
     },
     {
       title: "Management",
       items: [
         { label: "Team", href: "/team", icon: "👥" },
-        { label: "Plan", href: "/plan", icon: "💳" },
-        { label: "Settings", href: "/settings", icon: "⚙️" },
+        { label: "Plan", href: "/plan-company", icon: "💳" },
+        { label: "Settings", href: "/settings-center", icon: "⚙️" },
       ],
     },
   ],
