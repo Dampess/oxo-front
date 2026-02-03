@@ -246,6 +246,8 @@
 
     .bar-group {
       display: flex;
+      margin: auto;
+      margin-bottom: 0;
       flex-direction: column;
       align-items: center;
 
@@ -271,7 +273,7 @@
 
       .label {
         font-size: 0.75rem;
-        margin-top: 0.25rem;
+        margin-top: 0.5rem;
       }
     }
   }
@@ -279,7 +281,7 @@
   .legend {
     display: flex;
     gap: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
 
     div {
       display: flex;

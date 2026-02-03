@@ -92,65 +92,6 @@ export default function CompanyDashboardPage() {
 
   return (
     <main className="company-dashboard">
-      {/* HEADER */}
-      <header className="dashboard-header">
-        <div>
-          <h1>Security Overview</h1>
-          <p>Real-time visibility of your organization’s security posture</p>
-        </div>
-        <Link href="/alerts-center" className="view-alerts">
-          View all alerts →
-        </Link>
-      </header>
-
-      {/* KPIs */}
-      <section className="stats-grid">
-        {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="stat-card"
-            onClick={() => alert(`Filter by ${stat.label}`)}
-          >
-            <span className="label">{stat.label}</span>
-            <span className="value">
-              {stat.value}
-              {stat.suffix && <small>{stat.suffix}</small>}
-            </span>
-          </div>
-        ))}
-      </section>
-
-      {/* Graph CSS */}
-      <section className="alerts-graph">
-        <h2>Critical vs Resolved Alerts</h2>
-        <div className="trend-chart">
-          {trendData.map((t) => (
-            <div key={t.label} className="bar-group">
-              <div
-                className="bar critical"
-                style={{ height: `${t.critical * 10}px` }}
-              >
-                <span>{t.critical}</span>
-              </div>
-              <div
-                className="bar resolved"
-                style={{ height: `${t.resolved * 10}px` }}
-              >
-                <span>{t.resolved}</span>
-              </div>
-              <div className="label">{t.label}</div>
-            </div>
-          ))}
-        </div>
-        <div className="legend">
-          <div>
-            <span className="box critical"></span> Critical
-          </div>
-          <div>
-            <span className="box resolved"></span> Resolved
-          </div>
-        </div>
-      </section>
       {/* QUICK SCAN WIDGET */}
       <section className="quick-scan">
         <h2>Quick Security Scan</h2>
@@ -222,6 +163,65 @@ export default function CompanyDashboardPage() {
             <p>{scanResult.summary}</p>
           </div>
         )}
+      </section>
+      {/* HEADER */}
+      <header className="dashboard-header">
+        <div>
+          <h1>Security Overview</h1>
+          <p>Real-time visibility of your organization’s security posture</p>
+        </div>
+        <Link href="/alerts-center" className="view-alerts">
+          View all alerts →
+        </Link>
+      </header>
+
+      {/* KPIs */}
+      <section className="stats-grid">
+        {stats.map((stat) => (
+          <div
+            key={stat.label}
+            className="stat-card"
+            onClick={() => alert(`Filter by ${stat.label}`)}
+          >
+            <span className="label">{stat.label}</span>
+            <span className="value">
+              {stat.value}
+              {stat.suffix && <small>{stat.suffix}</small>}
+            </span>
+          </div>
+        ))}
+      </section>
+
+      {/* Graph CSS */}
+      <section className="alerts-graph">
+        <h2>Critical vs Resolved Alerts</h2>
+        <div className="trend-chart">
+          {trendData.map((t) => (
+            <div key={t.label} className="bar-group">
+              <div
+                className="bar critical"
+                style={{ height: `${t.critical * 10}px` }}
+              >
+                <span>{t.critical}</span>
+              </div>
+              <div
+                className="bar resolved"
+                style={{ height: `${t.resolved * 10}px` }}
+              >
+                <span>{t.resolved}</span>
+              </div>
+              <div className="label">{t.label}</div>
+            </div>
+          ))}
+        </div>
+        <div className="legend">
+          <div>
+            <span className="box critical"></span> Critical
+          </div>
+          <div>
+            <span className="box resolved"></span> Resolved
+          </div>
+        </div>
       </section>
       {/* Active Alerts */}
       <section className="alerts-list-section">
