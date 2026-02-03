@@ -2,10 +2,11 @@
 
 import PersonalDashboard from "../(individual)/dashboard/IndividualDashboard";
 import CompanyDashboard from "../(company)/dashboard/CompanyDashboard";
+import AdminDashboard from "../(admin)/dashboard/adminDashboard";
 
-function getUserType(): "personal" | "company" {
+function getUserType(): "personal" | "company" | "admin" {
   // mock pour l’instant
-  return "company";
+  return "admin";
 }
 
 export default function DashboardPage() {
@@ -13,6 +14,10 @@ export default function DashboardPage() {
 
   if (userType === "company") {
     return <CompanyDashboard />;
+  }
+
+  if (userType === "admin") {
+    return <AdminDashboard />;
   }
 
   return <PersonalDashboard />;

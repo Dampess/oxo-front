@@ -9,7 +9,7 @@ import { sidebarConfig, UserRole } from "../sidebar.config";
 
 function getUserRole(): UserRole {
   // mock — plus tard via auth
-  return "company";
+  return "admin";
 }
 
 export default function DashboardSidebar() {
