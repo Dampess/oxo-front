@@ -6,7 +6,7 @@ import AdminDashboard from "../(admin)/dashboard/adminDashboard";
 
 function getUserType(): "personal" | "company" | "admin" {
   // mock pour l’instant
-  return "admin";
+  return "company";
 }
 
 export default function DashboardPage() {

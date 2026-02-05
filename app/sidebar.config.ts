@@ -68,12 +68,25 @@ export const sidebarConfig: Record<UserRole, SidebarSection[]> = {
 
   admin: [
     {
-      title: "Admin",
+      title: "Overview",
       items: [
-        { label: "Overview", href: "/admin", icon: "🛠️" },
-        { label: "Users", href: "/admin/users", icon: "👥" },
-        { label: "Companies", href: "/admin/companies", icon: "🏢" },
-        { label: "Billing", href: "/admin/billing", icon: "💰" },
+        { label: "Dashboard", href: "/dashboard", icon: "📊" },
+        { label: "Incidents", href: "/incidents", icon: "🚨" },
+        { label: "Alerts", href: "/admin-alerts", icon: "⚠️" },
+      ],
+    },
+    {
+      title: "Management",
+      items: [
+        { label: "Companies", href: "/companies", icon: "🏢" },
+        { label: "Users", href: "/users", icon: "👥" },
+      ],
+    },
+    {
+      title: "System",
+      items: [
+        { label: "Audit Logs", href: "/admin-logs", icon: "📜" },
+        { label: "Settings", href: "/admin-settings", icon: "⚙️" },
       ],
     },
   ],
